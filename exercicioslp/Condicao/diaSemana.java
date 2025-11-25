@@ -16,9 +16,11 @@ public class diaSemana {
         while (d < 1 || d > 7) {
             diaDaSemana();
         }
-        for(String dia : this.dias){
-            if(d.equals(dia)){
+        for(int i = 0; i<this.dias.length; i++){
+            if(d == i+1){
                 Condicao.t.msg("dia da semana: "+d);
+            }else{
+
             }
         }
     }

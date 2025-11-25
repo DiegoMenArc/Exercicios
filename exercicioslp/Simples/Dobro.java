@@ -6,5 +6,4 @@ public class Dobro {
         int num1 = Simples.t.inputInt("Digite o 1º número");
         System.out.println("o dobro de "+num1+" é igual a: "+(num1*2));
     }
-
 }
