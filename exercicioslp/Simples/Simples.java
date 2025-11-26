@@ -15,38 +15,13 @@ public class Simples {
         this.d = new Dobro();
         this.m = new Media();
         this.to = new Total();
-        Integer e = t.inputInt("""
-                MENU:
-                1. Somador;
-                2. Dobro;
-                3. Media;
-                4. Total;
-
-                0. Sair
-                """);
+        Integer e = t.inputInt("MENU:\n\n1. Somador;\n2. Dobro;\n3. Media;\n4. Total;\n\n0. Sair");
         switch (e) {
-            case 1:
-                s.setter();
-                s.somar();
-                menu();
-                break;
-            case 2:
-                d.dobro();
-                menu();
-                break;
-            case 3:
-                m.setter();
-                m.media();
-                menu();
-                ;
-                break;
-            case 4:
-                to.calcTotal();
-                menu();
-                ;
-                break;
-            default:
-                return;
+            case 1: s.setter(); s.somar(); menu(); break;
+            case 2: d.dobro(); menu(); break;
+            case 3: m.setter(); m.media(); menu(); break;
+            case 4: to.setter(); to.calcTotal(); menu(); break;
+            default: return;
         }
     }
 }

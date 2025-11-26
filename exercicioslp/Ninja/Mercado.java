@@ -7,14 +7,7 @@ public class Mercado {
     Double total;
 
     public void menuMercado(){
-        Integer e = Ninja.t.inputInt("""
-                MENU: 
-                1. Adicionar produto 
-                2. Exibir Subtotal; 
-                3. Finalizar Compra; 
-                
-                0. Sair 
-                """);
+        Integer e = Ninja.t.inputInt("MENU:\n 1. Adicionar produto;\n2. Exibir Subtotal;\n3. Finalizar Compra;\n\n 0. Sair;");
         switch (e) {
             case 1: this.addProd(); menuMercado(); break;
             case 2: this.subTotal(); menuMercado(); break;

@@ -6,15 +6,7 @@ public class Gerenciador{
     static Gerenc g = new Gerenc();
 
     public void menu() {
-        Integer e = Ninja.t.inputInt("""
-                1. Nova Tarefa;
-                2. Listar Tarefa;
-                3. Editar Tarefa;
-                4. Remover Tarefa;
-                5. Marcar como Concluida;
-
-                0. Sair
-                """);
+        Integer e = Ninja.t.inputInt("1. Nova Tarefa;\n2. Listar Tarefa;\n3. Editar Tarefa;\n4. Remover Tarefa;\n5. Marcar como Concluida;\n\n0. Sair");
         while (e < 0 || e > 5) {
             menu();
         }

@@ -16,17 +16,18 @@ public class Total {
     }
 
     public void calcTotal() {
+        String vP="", vM = "", vG = "";
         this.valorTotal = this.valorP+this.valorM+this.valorG;
-        Simples.t.prt("Valor total: R$"+this.valorTotal);
         if(this.qtdP > 0){
-            Simples.t.prt("Valor por açaí pequeno: R$"+valorP);
+            vP = ("Valor por açaí pequeno: R$"+valorP+"\n");
         }
         if(this.qtdM > 0){
-            Simples.t.prt("Valor por açaí médio: R$"+valorM);
+            vM = ("Valor por açaí médio: R$"+valorM+"\n");
         }
         if(this.qtdG > 0){
-            Simples.t.prt("Valor por açaí grande: R$"+valorG);
+            vG =("Valor por açaí grande: R$"+valorG);
         }
+        Simples.t.msg("Valor total: R$"+this.valorTotal+"\n"+vP+vM+vG);
     }
 
 }

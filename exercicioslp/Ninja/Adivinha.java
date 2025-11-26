@@ -11,6 +11,7 @@ public class Adivinha {
             while (this.escolha != this.alvo) {
                 if (this.tentativas == 0) {
                     this.escolha = Ninja.t.inputInt("Adivinhe o número aleatório de 0 a 1000");
+                    this.tentativas++;
                 } else if (this.tentativas > 0) {
                     String var = (escolha > alvo ? " menor que o escolhido." : " maior que o escolhido");
                     Ninja.t.msg("Escolha errada, o número aleatório é"+var);

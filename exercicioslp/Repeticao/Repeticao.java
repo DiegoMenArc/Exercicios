@@ -16,15 +16,7 @@ public class Repeticao {
         this.s = new Soma();
         this.ta = new Tabuada();
 
-        Integer e = t.inputInt("""
-                MENU:
-                1. Contador;
-                2. Quadrado;
-                3. Soma
-                4. Tabuada
-
-                0. Sair
-                """);
+        Integer e = t.inputInt("MENU:\n\n1. Contador;\n2. Quadrado;\n3. Soma;\n4. Tabuada;\n\n0. Sair");
         switch (e) {
             case 1: this.c.contador(); menu(); break;
             case 2: this.q.quad(); menu(); break;

@@ -8,8 +8,8 @@ public class Ordenador {
         Integer qtd;
         qtd = Vetor.t.inputInt("Informe a quantidade de números");
         this.nums = new Integer[qtd];
-        for(int i = 0; i<= qtd; i++){
-            this.nums[i] = Vetor.t.inputInt("Informe o"+(i+1)+"número");
+        for(int i = 0; i< this.nums.length-1; i++){
+            this.nums[i] = Vetor.t.inputInt("Informe o "+(i+1)+"º número");
         }
     }
 

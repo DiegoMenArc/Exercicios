@@ -18,7 +18,7 @@ public class diaSemana {
         }
         for(int i = 0; i<this.dias.length; i++){
             if(d == i+1){
-                Condicao.t.msg("dia da semana: "+d);
+                Condicao.t.msg("dia da semana: "+this.dias[d-1]);
             }else{
 
             }

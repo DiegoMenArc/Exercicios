@@ -11,15 +11,7 @@ public class Vetor {
     private static F1 f1 = new F1();
 
     public void menu(){
-        Integer e = t.inputInt("""
-                MENU:
-                1. Dobrador
-                2. Ordeador
-                3. Fórmula 1
-                4. Fila indiana
-
-                0. Sair
-                """);
+        Integer e = t.inputInt("MENU:\n1. Dobrador;\n2. Ordenador;\n3. Fórmula 1;\n4. Fila indiana;\n\n0. Sair;");
         switch (e) {
             case 1: d.setters(); d.getter(); menu(); ;break;
             case 2: o.setter(); o.verificaOrdem(); menu(); break;

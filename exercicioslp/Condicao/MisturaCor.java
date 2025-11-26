@@ -4,7 +4,7 @@ public class MisturaCor {
 
     public void misturaCor(){
         String cor1 = Condicao.t.inputString("Informe a primeira cor");
-        String cor2 = Condicao.t.inputString("Informe a primeira cor");
+        String cor2 = Condicao.t.inputString("Informe a segunda cor");
         misturaCor(cor1, cor2);
     }
 
