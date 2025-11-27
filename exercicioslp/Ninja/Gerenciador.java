@@ -27,14 +27,15 @@ class Gerenc {
     private ArrayList<Tarefa> tarefas = new ArrayList<>();
 
     public void novaTarefa() {
-        Tarefa t = new Tarefa();
-        t.codigo = Ninja.t.inputString("Informe um nome para sua tarefa");
-        t.desc = Ninja.t.inputString("Informe uma descrição para sua tarefa");
-        t.conc = false;
+        String c, d;
+        c = Ninja.t.inputString("Informe um nome para sua tarefa");
+        d = Ninja.t.inputString("Informe uma descrição para sua tarefa");
+        Tarefa t = new Tarefa(c, d);
+        
         novaTarefa(t);
     }
 
-    private void novaTarefa(Tarefa t) {
+    private void novaTarefa(Tarefa t ) {
         this.tarefas.add(t);
     }
 
@@ -42,14 +43,14 @@ class Gerenc {
         System.out.println();
         for (Integer i = 0; i < tarefas.size(); i++) {
             Tarefa t = tarefas.get(i);
-            String finalizada = (t.conc) ? "X" : "";
-            System.out.printf("%dº | %s | %s | ( %s ) %n", (i + 1), t.codigo, t.desc, finalizada);
+            String finalizada = (t.getConc()) ? "X" : "";
+            System.out.printf("%dº | %s | %s | ( %s ) %n", (i + 1), t.getCodigo(), t.getDesc(), finalizada);
         }
         Ninja.t.msg("Verfique a lista no terminal.");
     }
 
     public void editar() {
-        Integer pos = Ninja.t.inputInt("Informe a posição da tarefa que deseja edita  r");
+        Integer pos = Ninja.t.inputInt("Informe a posição da tarefa que deseja editar");
         String nome = Ninja.t.inputString("Informe um novo nome, caso não queria, apenas digite o nome atual");
         String desc = Ninja.t.inputString("Informe uma nova descrição, caso não queria, apenas digite a atual");
 
@@ -58,8 +59,8 @@ class Gerenc {
 
     private void editar(Integer pos, String nome, String desc) {
         Tarefa t = this.tarefas.get(pos - 1);
-        t.codigo = nome;
-        t.desc = desc;
+        t.setCod(nome); 
+        t.setDesc(desc);
     }
 
     public void deletar() {
@@ -86,13 +87,43 @@ class Gerenc {
 
     private void concluir(Integer pos) {
         Tarefa tarefa = this.tarefas.get(pos - 1);
-        tarefa.conc = true;
+        tarefa.concluir();
     }
 }
 
 class Tarefa {
-    public String codigo;
-    public String desc;
-    public Boolean conc;
+    private String codigo;
+    private String desc;
+    private Boolean conc;
+
+    public Tarefa(String cod, String desc){
+        this.codigo = cod;
+        this.desc = desc;
+        this.conc = false;
+    }
+
+    public String getCodigo(){
+        return this.codigo;
+    }
+
+    public String getDesc(){
+        return this.desc;
+    }
+
+    public Boolean getConc(){
+        return this.conc;
+    }
+
+    public void setCod(String c){
+        this.codigo = c;
+    }
+
+    public void setDesc(String d){
+        this.desc = d;
+    }
+
+    public void concluir(){
+        this.conc = true;
+    }
 }
 

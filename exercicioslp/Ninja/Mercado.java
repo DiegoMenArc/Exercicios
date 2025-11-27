@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 public class Mercado {
     private ArrayList<Produto> produtos = new ArrayList<>();
-    Double total;
 
     public void menuMercado(){
-        Integer e = Ninja.t.inputInt("MENU:\n 1. Adicionar produto;\n2. Exibir Subtotal;\n3. Finalizar Compra;\n\n 0. Sair;");
+        Integer e = Ninja.t.inputInt("MENU:\n1. Adicionar produto;\n2. Exibir Subtotal;\n3. Finalizar Compra;\n\n 0. Sair;");
         switch (e) {
             case 1: this.addProd(); menuMercado(); break;
             case 2: this.subTotal(); menuMercado(); break;
@@ -30,25 +29,24 @@ public class Mercado {
         for(Produto p : this.produtos){
             subtotal += p.getPreco() * p.getQtd();
         }
-
-        Ninja.t.prt(null);
         Ninja.t.prt("Subtotal: "+subtotal);
 
         for(Produto p : this.produtos){
             Double total = p.getPreco() * p.getQtd();
-            Ninja.t.prt("SubTotal: "+total);
-            Ninja.t.prt("Produto: "+p.getNome()+"| Valor:  "+p.getPreco()+" | Quantidade: "+p.getQtd());
+            Ninja.t.prt("Valor por "+p.getNome()+": R$"+total+"| Valor:  "+p.getPreco()+" | Quantidade: "+p.getQtd());
         }
     }
 
     private void finalizar(){
+        Double total = 0.0;
         for(Produto p : this.produtos){
-            this.total += p.getPreco() * p.getQtd();
+            total += p.getPreco() * p.getQtd();
         }
 
-        Ninja.t.msg("Compra no valor de: R$"+this.total+" finalizada");
+        Ninja.t.msg("Compra no valor de: R$"+total+" finalizada");
+        
         this.produtos.removeAll(produtos);
-        this.total = 0.0;
+        total = 0.0;
     }
 }
 
@@ -57,7 +55,7 @@ class Produto{
     private Double preco;
     private Integer qtd;
 
-    public Produto(String n, Double p, Integer q){
+    public Produto( String n, Double p, Integer q){
         this.nome = n;
         this.preco = p;
         this.qtd = q;

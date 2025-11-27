@@ -16,7 +16,7 @@ public class Ninja {
 
         Integer e = t.inputInt("MENU:\n1. Jogo do adivinha\n2. Gerenciador\n3. Mercado\n\n0. Sair");
         switch (e) {
-            case 1: this.a.adivinha(); menu(); break;
+            case 1: this.a.jogar(); menu(); break;
             case 2: this.g.menu(); menu(); break;
             case 3: this.m.menuMercado(); menu(); break;
             case 0: return;

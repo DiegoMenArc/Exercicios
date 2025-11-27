@@ -33,6 +33,7 @@ public class Main {
             case 2: c.menu(); menu(); break;
             case 3: r.menu(); menu(); break;
             case 4: v.menu(); menu(); break;
+            case 5: n.menu(); menu(); break;
             case 0: System.exit(0);
             default: menu(); break;
         }
